@@ -1,3 +1,7 @@
 <h3>Google Map</h3>
 <p>Selected Title: {{ selectedCity?.title }}</p>
-<!--<google-map [geoObjectsPromise]="citiesPromise" (markerClick)="onPlaceClick($event)"></google-map>-->
+<google-map
+    [geoObjectsPromise]="citiesPromise"
+    (markerClick)="onPlaceClick($event)"
+>
+</google-map>

@@ -10,6 +10,7 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {DataTablePageComponent} from "./data-table-page/data-table-page.component";
 import {DataTableComponent} from "./data-table-page/data-table.component";
 import {GoogleMapPageComponent} from "./google-map-page/google-map-page.component";
+import {GoogleMapComponent} from "./google-map-page/google-map.component";
 import {MapSearchPageComponent} from "./map-search-page/map-search-page.component";
 import {GenericService} from "./services/generic.service";
 import {GoogleMapService} from "./services/google-map.service";
@@ -29,6 +30,7 @@ import {RealEstateService} from "./services/real-estate.service";
     DataTablePageComponent,
     DataTableComponent,
     GoogleMapPageComponent,
+    GoogleMapComponent,
     MapSearchPageComponent
     //TODO
   ],
