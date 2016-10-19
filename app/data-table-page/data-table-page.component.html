@@ -2,7 +2,7 @@
 
 <h3>Selected: {{selectedHero?.id}}</h3>
 <data-table [items]="heroes"
-    [headers]="tableHeaders">
+    [headers]="tableHeaders"
+    [selectedItem]="selectedHero"
+    (itemClick)="onHeroClick($event)">
 </data-table>
-<!--[selectedItem]="selectedHero"-->
-<!--(itemClick)="onHeroClick($event)">-->
