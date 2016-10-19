@@ -1,35 +1,36 @@
 import {Component} from '@angular/core';
-import {HeroService} from "../services/hero.service";
-import {Hero} from "../models/hero";
+import {RealEstateService} from "../services/real-estate.service";
+import {RealEstate} from "../models/real-estate";
 
 @Component({
-  selector: 'data-table-page',
-  templateUrl: "app/data-table-page/data-table-page.component.html"
+    selector: 'data-table-page',
+    templateUrl: "app/data-table-page/data-table-page.component.html"
 })
 export class DataTablePageComponent {
+    realEstates: RealEstate[];
+    selected: RealEstate;
+    tableHeaders: Object[];
 
-  heroes:Hero[];
-  selectedHero:Hero;
-  tableHeaders:Object[];
+    constructor(private service: RealEstateService) {
+        this.tableHeaders = [
+            {value: "type", text: "Typ"},
+            {value: "street", text: "Ulica"},
+            {value: "builtAt", text: "Data wybudowania"},
+            {value: "price", text: "Cena"},
+            {value: "lat", text: "Szerokość"},
+            {value: "lng", text: "Długość"}
+        ];
 
-  constructor(private _heroesService:HeroService) {
-    this.tableHeaders = [
-      {value: "universe", text: "Komiksowe Uniwersum"},
-      {value: "name", text: "Imie"},
-      {value: "secretIdentity", text: "Tozsamosc"}
-    ];
+        this.service.getAll().then((data) => {
+            console.log("data table PAGE", data);
+            this.realEstates = <RealEstate[]>data;
+        }, function (error) {
+            console.log(error);
+        });
+    }
 
-    this._heroesService.getHeroes().then((data) => {
-      console.log("data table PAGE", data);
-      this.heroes = <Hero[]>data;
-    }, function (error) {
-      console.log(error);
-    });
-  }
-
-  onHeroClick(hero:Hero) {
-    console.log("data table PAGE, selected:", hero);
-    this.selectedHero = hero;
-  }
-
+    onRealEstateClick(realEstate: RealEstate) {
+        console.log("data table PAGE, selected:", realEstate);
+        this.selected = realEstate;
+    }
 }

@@ -1,8 +1,8 @@
 <h3>Data Table Page</h3>
 
-<h3>Selected: {{selectedHero?.id}}</h3>
-<data-table [items]="heroes"
+<h3>Selected: {{selected?.id}}</h3>
+<data-table [items]="realEstates"
     [headers]="tableHeaders"
-    [selectedItem]="selectedHero"
-    (itemClick)="onHeroClick($event)">
+    [selectedItem]="selected"
+    (itemClick)="onRealEstateClick($event)">
 </data-table>

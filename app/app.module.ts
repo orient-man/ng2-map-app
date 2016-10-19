@@ -14,6 +14,7 @@ import {MapSearchPageComponent} from "./map-search-page/map-search-page.componen
 import {GenericService} from "./services/generic.service";
 import {GoogleMapService} from "./services/google-map.service";
 import {HeroService} from "./services/hero.service";
+import {RealEstateService} from "./services/real-estate.service";
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import {HeroService} from "./services/hero.service";
   providers: [
     GenericService,
     GoogleMapService,
-    HeroService
+    HeroService,
+    RealEstateService
     //TODO
   ],
   bootstrap: [AppComponent]
