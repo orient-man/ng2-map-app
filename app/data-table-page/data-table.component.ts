@@ -17,4 +17,8 @@ export class DataTableComponent {
         this.selectedItem = item;
         this.itemClick.emit(item);
     }
+
+    getStyle(item: any) {
+        return item === this.selectedItem ? "yellow" : "";
+    }
 }

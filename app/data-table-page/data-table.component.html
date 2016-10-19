@@ -8,7 +8,10 @@
     </tr>
     </thead>
     <tbody class="items-container">
-    <tr class="list-item" *ngFor="let item of items" (click)="onItemClick(item)">
+    <tr class="list-item"
+        *ngFor="let item of items"
+        (click)="onItemClick(item)"
+        [style.background-color]="getStyle(item)">
       <td *ngFor="let h of headers">
           {{item[h.value]}}
       </td>
