@@ -2,15 +2,15 @@
   <table class="list">
     <thead class="list-header">
     <tr>
-      <td>
-        <a>TODO</a>
+      <td *ngFor="let h of headers">
+          {{h.text}}
       </td>
     </tr>
     </thead>
     <tbody class="items-container">
-    <tr class="list-item">
-      <td>
-        TODO
+    <tr class="list-item" *ngFor="let item of items">
+      <td *ngFor="let h of headers">
+          {{item[h.value]}}
       </td>
     </tr>
     </tbody>
